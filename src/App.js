@@ -1,15 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './pages/home.js'
+import HandleChange from './pages/form.js';   
+import Remove from './pages/remove.js';  
+import Displaycat from './pages/displaycat.js'
+import  { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Update from './pages/update.js';
+import Displayall from './pages/displayall.js'
+import Search from './pages/search.js'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      <h1 class="text1">Inventory Management</h1>
-      <button class="button button1">Green</button>
-<button class="button button2">Blue</button>
+<div>
+<BrowserRouter>
+<Routes>
+  <Route index element = {<Home />} />
+  <Route path="/home" element= {<Home />}/>
+  <Route path="/update" element= {<Update />}/>
+  <Route path="/add" element= {<HandleChange />} />
+  <Route path="/remove" element= {<Remove />} />
+  <Route path="/displaycat" element= {<Displaycat />} />
+  <Route path="/displayall" element= {<Displayall />} />
+  <Route path="/search" element= {<Search />} />
 
-      </header>
+</Routes>
+</BrowserRouter>
     </div>
   );
 }
